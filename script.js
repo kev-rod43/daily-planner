@@ -14,7 +14,8 @@ $("textarea").each(function(){
 }
 );
 
-//sets the text of the header to todays date
+function setHeaderAndColor(){
+  //sets the text of the header to todays date
 $("#currentDay").text(dayjs().format("dddd, MMMM Do"))
 
 //sets the style utility classes that sets the background color for the time blocks depending on wether they are in the present, past or future
@@ -29,6 +30,9 @@ $(".time-block").each(function(){
   }
 }
 );
+}
+setHeaderAndColor()
+setInterval(setHeaderAndColor, 10000)
 
 //saves the hour notes to the savedHourNotes object, then stores that object in local data
 $(".saveBtn").on("click", function(event){
